@@ -9,11 +9,13 @@ if(!User){
 if(!message||!subject){
     res.status(400).json("please fill the required fileds")
 }
-const send_to = "fsdsalman12.sk@gmail.com"
-        const sent_from = "fsdsalman12.sk@gmail.com"
-        const reply_to = User.email
+const   sent_from =process.env.SendingEmailFrom
+const   send_to = process.env.senderEmail
+ 
+    
+const reply_to = User.email
 try {
-    await sendMail(sent_from,send_to,message,subject,reply_to)
+    await sendMail(sent_from,send_to ,message,subject,reply_to)
     res.status(200).json({success:true , message:"Email Sent"})
    } catch (error) {
     res.status(500).json("Email not sent please try again ")
