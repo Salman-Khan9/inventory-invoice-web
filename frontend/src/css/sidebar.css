@@ -1,0 +1,102 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.layout-page{
+    
+    display: flex;
+   
+}
+.sidebar { 
+  position: fixed;
+  border: 1px solid rgb(221, 220, 220);
+  height: 100%;
+  background-color: rgb(221, 220, 220) ;
+ 
+}
+.sidebar-head{
+  display: flex;
+  
+  background-color: rgb(47, 47, 145);
+padding: 12px;
+
+}
+.sidebar-head img{
+  height: 40px;
+  border-radius: 100px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+.tag-icons{
+  margin-left: 10px;
+  
+}
+.account-tag{
+  padding: 5px;
+  padding-right: 190px;
+border-radius: 50px;
+  display: flex;
+  margin-left: 5px;
+  margin-top: 30px;
+  border: 1px solid gray;
+background-color: rgb(240, 237, 237);
+  transition: .5s;
+}
+.tags{
+  padding: 5px;
+border-radius: 50px;
+background-color: rgb(240, 237, 237);
+  display: flex;
+  border: 1px solid gray;
+  padding-right: 190px;
+  margin-left: 5px;
+  margin-top: 30px;
+  transition: .5s;
+}
+.tag-title
+{
+  
+  margin-left: 10px;
+  font-weight: 900;
+  margin-top: 6px;
+  
+  
+}
+.title{
+  white-space: pre;
+  color: black;
+  
+
+}
+.close-tags{
+
+padding: 5px;
+border-radius: 50px;
+background-color: rgb(240, 237, 237);
+  display: flex;
+  border: 1px solid gray;
+  padding-right: 50px;
+  margin-left: 2px;
+  margin-top: 30px;
+}
+.arrow-icon{
+  margin-left: 60px;
+  margin-top:8px ;
+  transition: .5s;
+
+}
+.side-item-open .arrow-icon{
+  transform: rotate(90deg);
+  transition: .5s;
+}
+.child-title{
+  border-radius: 30px;
+  padding: 5px;
+  margin-top: 10%;
+  margin-left: 10px;
+  border: 1px solid  gray;
+  color: black;
+  font-weight: 700;
+  padding-left: 20px;
+  background-color:  rgb(240, 237, 237);
+}

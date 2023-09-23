@@ -1,0 +1,89 @@
+body{
+    background-color:  rgb(250, 249, 249);
+
+
+}
+.register-page{
+    margin: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    
+}
+.register-box{
+    
+    background-color:rgb(250, 249, 249);
+
+  
+    
+     display: inline-block;
+     border-radius: 2%;
+     border: 2px solid #ccc;
+     box-sizing: border-box;
+     
+ }
+ .register-box img{
+    mix-blend-mode: multiply;
+   margin-top: 25px;
+     margin-left: 40%;
+     height: 20%;
+     width: 20%;
+ }
+ .heading{
+    background-color: rgb(250, 249, 249);
+
+     text-align: center;
+ }
+ .input{
+    background-color: rgb(198, 200, 203);
+
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 20px;
+    padding-right: 50px;
+    padding-left: 20px ;
+    margin-left: 80px;
+    margin-right: 50px;
+ }
+ .register-form{
+    background-color: rgb(250, 249, 249);
+
+text-align: center;
+ }
+ 
+ .register-page p{
+    background-color: rgb(250, 249, 249);
+
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+ }
+ .already-login{
+    
+    
+    background-color: rgb(250, 249, 249);
+    
+    
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+ }
+ .reg-button{
+    
+    background-color: rgb(185, 208, 242);
+
+   padding: 8px;
+  margin: 10px;
+  border-radius: 20px;
+  padding-right: 95px;
+  padding-left: 90px ;
+  margin-left: 80px;
+  margin-right: 50px;
+ }
+ 
+ 
+ 

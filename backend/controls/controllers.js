@@ -127,7 +127,7 @@ const login = async (req,res)=>{
     const logged = async (req,res)=>{
     const token = req.cookies.token
     if(!token){
-        return res.status(400).json(false)
+        return res.json(false)
     }
     const verify = await jwt.verify(token ,process.env.SECRET_KEY)
     if(verify){
@@ -198,7 +198,7 @@ const updateuser = await data.save()
             const {email}= req.body
         const userexist = await user.findOne({email})
         if(!userexist){
-            res.status(400).json("user does not exist")
+            res.status(400).json({message:"Wrong Email"})
         
         }
         //delete token if exist
@@ -220,7 +220,7 @@ const updateuser = await data.save()
             expiresat : Date.now() + 30 *(60*1000),
         }).save()
         //construct reset url
-        const reseturl = `${process.env.frontend_url}/reset password / ${resettoken}`
+        const reseturl = `${process.env.frontend_url}/Resetpass/${resettoken}`
         //reset email
         const message = `
         <h2>Hello ${userexist.name}<h2>

@@ -1,0 +1,12 @@
+.layout-footer{
+    text-align: center;
+}
+.layout-header-3{
+ display: flex;
+ justify-content: space-between;
+  
+}
+.layout-header-2{
+    font-weight: bold;
+    font-size: xx-large;
+}

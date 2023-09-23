@@ -1,0 +1,95 @@
+
+
+
+.login-page{
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-box{
+    
+
+  
+   background-color: rgb(250, 249, 249);
+    display: inline-block;
+    border-radius: 2%;
+margin-left: 30%;
+    margin-top: 15%;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    
+}
+.login-box img{
+   background-color: rgb(250, 249, 249);
+   mix-blend-mode: multiply;
+    margin-left: 45%;
+    height: 10%;
+    width: 10%;
+}
+.heading{
+   background-color: rgb(250, 249, 249);
+  
+    text-align: center;
+}
+.email-input{
+    border-radius: 5px;
+    background-color: rgb(198, 200, 203);
+    margin-top: 10px;
+    
+    padding: 10px;
+    padding-right: 100px;
+    margin-left: 25%;
+
+}
+.pass-input{
+    margin-top: 10px;
+    padding: 10px;
+    padding-right: 100px;
+    border-radius: 5px;
+    
+    
+    margin-left: 25%;
+
+    background-color: rgb(198, 200, 203);
+}
+.login-form{
+    background-color: rgb(250, 249, 249);
+}
+.log-button{
+    padding: 10px;
+    border-radius: 10px;
+    padding-left: 120px;
+    padding-right:120px ;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 25%;
+    background-color: rgb(185, 208, 242);
+
+
+}
+.forgot-pass{
+   
+       background-color: rgb(250, 249, 249);
+       margin-top: 15px;
+    margin-left: 140px;
+
+}
+.f-pass{
+    background-color: rgb(250, 249, 249);
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+}
+.register-acc{
+margin-top: 10px;
+margin-bottom: 30px;
+    background-color: rgb(250, 249, 249);
+    margin-left: 140px;
+    
+}
+body{
+   background-color:  rgb(250, 249, 249);
+}
+
+
+
