@@ -31,8 +31,9 @@ const name = useSelector(selectName)
         Logout
       </button>
     </div>
-    
+    <hr></hr>
   </div>
+  
   )
 }
 

@@ -2,11 +2,9 @@ const Prodcut = require("../models/productmodel")
 const { formatFileSize } = require("../utils/fileUpload")
 const cloudinary = require ("cloudinary").v2;
 const productroute = async(req,res)=>{
-   const {name,sku,description,quantity,category ,price}= req.body
+   const {name,sku,description,quantity,model ,price,ICnumber,INnumber,ordernumber}= req.body
    //validate
-   if(!name||!description||!quantity||!price||!category){
-    res.status(400).json("please fill the fields")
-   }
+  
    //uploading image with multer
    let filedata = {};
 if(req.file){
@@ -28,8 +26,9 @@ if(req.file){
    //creating product 
    const product = await Prodcut.create({
     User:req.user.id,
-    name,sku,description,price,quantity,category,image:filedata
+    name,sku,description,price,quantity,model,image:filedata,ICnumber,INnumber,ordernumber
    })
+   
    
    if(product){
     res.status(200).json(product)

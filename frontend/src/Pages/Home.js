@@ -2,7 +2,7 @@ import React from 'react'
 import pic from "../images/logo.png"
 import pic2 from "../images/home.jpg"
    import "../css/home.css"
-import { Showonlogin, Showonlogout } from '../components/navprotect/Navbar'
+import { Showonlogin, Showonlogout } from '../components/navbar/Navbar'
    
 const home = () => {
   return (

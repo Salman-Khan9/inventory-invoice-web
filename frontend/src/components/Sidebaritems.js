@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "../css/sidebar.css"
 import {BiSolidRightArrow} from "react-icons/bi"
-import { NavLink } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 
 
 
@@ -40,8 +40,8 @@ const Sidebaritems = ({item,isopen}) => {
     return(
      <div className={isopen?"tags":"close-tags"} >
       
-       <span className='tag-icons'> {item.icon && <span>{item.icon}</span>} 
-        </span> <div className='tag-title'>  {isopen && <a style={{textDecoration:"none"}} href={item.path} className='title'> {item.title} </a>}  </div>
+       <span className='tag-icons'> {item.icon && <span>{item.icon}</span>}
+        </span> <div className='tag-title'>  {isopen && <a  style={{textDecoration:"none"}} href={item.path} className='title'> {item.title} </a>}  </div>
         
         </div>
     )

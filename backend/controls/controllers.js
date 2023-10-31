@@ -32,7 +32,7 @@ const register = async (req,res) =>{
      res.cookie("token",token,{
         path:"/",
         httpOnly : true,
-        expires : new Date(Date.now()+1000*86400),
+        expires : new Date(Date.now()+86400*1000),
         samesite : "none",
         secure : true,
      })
@@ -78,7 +78,7 @@ const login = async (req,res)=>{
     res.cookie("token",token,{
       path:"/",
       httpOnly : true,
-      expires : new Date(Date.now()+1000*86400),
+      expires : new Date(Date.now()+86400*1000),
       samesite : "none",
       secure : true,
     })
@@ -130,6 +130,7 @@ const login = async (req,res)=>{
         return res.json(false)
     }
     const verify = await jwt.verify(token ,process.env.SECRET_KEY)
+    
     if(verify){
         return res.status(200).json(true)
     }
@@ -217,7 +218,7 @@ const updateuser = await data.save()
             userid :userexist._id,
             token:hashtoken,
             createdat: Date.now(),
-            expiresat : Date.now() + 30 *(60*1000),
+            expiresat : new Date(Date.now()+86400*1000),
         }).save()
         //construct reset url
         const reseturl = `${process.env.frontend_url}/Resetpass/${resettoken}`

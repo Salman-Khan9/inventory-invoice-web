@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(250, 249, 249);
+
+}
+.Productpagecontainer{
+    margin-top: 20px;
+    border: 1px solid rgb(160, 160, 160);
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 150px;
+    border-radius: 10px;
+    background-color: rgb(250, 249, 249);
+    
+}
+.productheading{
+    font-size: xx-large;
+   padding-bottom: 10px;
+}
+.productform{
+    font-size:large ;
+    font-weight: 550;
+}
+.productdatacontainer{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid  rgb(160, 160, 160) ;
+    margin-top: 15px;
+    margin-right: 50px;
+    background-color: white;
+}
+.productform input{
+    padding: 5px;
+    margin-top: 4px;
+    border-radius: 4px;
+    border: 1.5px solid gray;
+    font-size: large;
+    background-color: white;
+    
+}
+.saveproduct{
+    font-size: large;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgb(169, 239, 169);
+}
+.productform label{
+    font-size: x-large;
+    
+}
+.productform textarea{
+    padding: 5px;
+    margin-top: 4px;
+    border-radius: 4px;
+    border: 1.5px solid gray;
+    font-size: large;
+}
+

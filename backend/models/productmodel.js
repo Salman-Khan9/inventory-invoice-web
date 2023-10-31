@@ -17,7 +17,7 @@ default : "SKU",
 trim:true,
   },
   quantity :{
-    type : String,
+    type : Number,
     required : [true,"please add the quantity"]
   },
   price : {
@@ -31,7 +31,19 @@ trim:true,
     type : String,
     required : [true,"please add a description"]
   },
-  category:{
+  model:{
+    type : String,
+    required : [true,"please add a model"]
+  },
+  ordernumber:{
+    type : String,
+    required : [true,"please add a category"]
+  },
+  INnumber:{
+    type : String,
+    required : [true,"please add a category"]
+  },
+  ICnumber:{
     type : String,
     required : [true,"please add a category"]
   }

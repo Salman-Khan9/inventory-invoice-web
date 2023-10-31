@@ -1,0 +1,19 @@
+
+input{
+    
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-right: 10px;
+    background-color: white;
+    padding: 5px;
+    padding-left: 10px;
+    padding: 10px;
+    margin-right: 50px;
+    
+}
+.searchicon{
+   position: relative;
+   top: 3px;
+   left: 150px;
+   mix-blend-mode :multiply
+}

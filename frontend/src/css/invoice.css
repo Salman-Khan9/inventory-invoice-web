@@ -1,0 +1,89 @@
+.head{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.dashboardheading{
+    font-size: xx-large;
+    font-weight: 900;
+    padding-bottom: 10px;
+}
+
+
+table{
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    border-top: 3px solid rgb(75, 133, 234);
+    border-bottom: 3px solid rgb(75, 133, 234);
+
+}
+th{
+    
+    text-align: left;
+    padding: 5px;
+    padding-right: 20px;
+}
+td{
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid grey;
+}
+.viewproduct{
+     padding: 7px;
+    border-radius: 10px;
+    border: 1px solid  rgb(160, 160, 160) ;
+    margin-top: 5px;
+    margin-right:60%;
+    background-color: white;
+    font-size: larger;
+    font-weight: 700;
+}
+.viewproductcontainer{
+    border: 1px solid grey;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+h3{
+margin-top: 10px;
+}
+.invoicebutton{
+    padding: 10px;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: rgb(187, 228, 187);
+}
+.invoiceheading{
+    margin-right: 10px;
+    font-size: larger;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.invoiceinput{
+margin: 10px;
+margin-bottom: 30px;
+
+}
+.address{
+    position: relative;
+    top: 20px;
+    padding-left: 5px;
+font-weight: 700;
+margin-bottom: 60px;
+
+}
+.addressheading{
+    position: relative;
+    bottom: 60px;
+    font-size: larger;
+    font-weight: 600;
+    
+}
+
+
+

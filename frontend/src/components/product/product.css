@@ -1,0 +1,53 @@
+.head{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.dashboardheading{
+    font-size: x-large;
+    font-weight: 900;
+}
+
+
+table{
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    border-top: 3px solid rgb(75, 133, 234);
+    border-bottom: 3px solid rgb(75, 133, 234);
+
+}
+th{
+    
+    text-align: left;
+    padding: 5px;
+}
+td{
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid grey;
+}
+.viewproduct{
+     padding: 7px;
+    border-radius: 10px;
+    border: 1px solid  rgb(160, 160, 160) ;
+    margin-top: 5px;
+    margin-right:60%;
+    background-color: white;
+    font-size: larger;
+    font-weight: 700;
+}
+.viewproductcontainer{
+    border: 1px solid grey;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+h3{
+margin-top: 10px;
+}
+
+  

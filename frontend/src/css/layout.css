@@ -4,7 +4,7 @@
 .layout-header-3{
  display: flex;
  justify-content: space-between;
-  
+  padding-bottom: 5px;
 }
 .layout-header-2{
     font-weight: bold;

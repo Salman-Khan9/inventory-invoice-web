@@ -14,6 +14,11 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { LogStatus } from "./services/authService";
 import { Set_isloggedin } from "./redux/features/auth/authslice";
+import AddProduct from "./Pages/AddProduct";
+import Productdetail from "./components/product/Productdetail";
+import Editproduct from "./Pages/Editproduct";
+import Invoice from "./Pages/Invoice";
+import Invoicehistory from "./Pages/Invoicehistory/Invoicehistory";
   
   
 axios.defaults.withCredentials=true
@@ -37,14 +42,55 @@ function App() {
     <Route path="/Login" element = {<Login/>}  />
     <Route path="/Forgot" element = {<Forgot/>}/>
     <Route path="/Resetpass/:resettoken" element = {<Resetpage />} />
-     <Route path="/Dashboard" element = {
+    <Route path="/Dashboard" element = {
       <Sidebar>
         <Layout>
           <Dashboard/>
         </Layout>
       </Sidebar>
       
+     }/>  
+     <Route path="/Addproduct" element = {
+      <Sidebar>
+        <Layout>
+          <AddProduct/>
+        </Layout>
+      </Sidebar>
+      
      }/>
+       <Route path="/Productdetail/:id" element = {
+      <Sidebar>
+        <Layout>
+          <Productdetail/>
+        </Layout>
+      </Sidebar>
+      
+     }/>  
+     <Route path="/UpdateProduct/:id" element = {
+      <Sidebar>
+        <Layout>
+          <Editproduct/>
+        </Layout>
+      </Sidebar>
+      
+     }/>
+      <Route path="/createinvoice" element = {
+      <Sidebar>
+        <Layout>
+          <Invoice/>
+        </Layout>
+      </Sidebar>
+      
+     }/><Route path="/invoicehistory" element = {
+      <Sidebar>
+        <Layout>
+          <Invoicehistory/>
+        </Layout>
+      </Sidebar>
+      
+     }/>
+     
+     
 
 
 

@@ -1,9 +1,7 @@
-import {GrContactInfo} from "react-icons/gr"
-import {MdSupervisorAccount} from 'react-icons/md'
-import {BiSolidUserAccount} from "react-icons/bi"
-import {MdManageAccounts} from "react-icons/md"
 import {MdProductionQuantityLimits} from "react-icons/md"
 import {MdDashboard} from "react-icons/md"
+import {LiaFileInvoiceDollarSolid} from 'react-icons/lia'
+import {FaHistory} from 'react-icons/fa'
 
 const menu = [
     {
@@ -19,27 +17,16 @@ const menu = [
         icon:<MdProductionQuantityLimits size={30}/>
         
     },
-    {
-        title:"Account",
-        icon : <BiSolidUserAccount size={30}/>,
-    
-        children : [{
-
-            title:"Profile",
-            path:"/Profile",
-            icon:<MdSupervisorAccount size={30}/>,
-        },
-    {
-        title:"Edit Profile",
-        path:"Edit-profile",
-        icon:<MdManageAccounts size={30}/>
-    }]
-    },
+   
    
     {
-        title:"Report Bug",
-        path : "/Report Bug",
-        icon: <GrContactInfo size={30}/>
+        title:"Invoice",
+        path : "/createinvoice",
+        icon: <LiaFileInvoiceDollarSolid size={25}/>
+    }, {
+        title:"Invoice History",
+        path : "/invoicehistory",
+        icon: <FaHistory size={20}/>
     },
    
 ]
