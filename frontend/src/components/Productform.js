@@ -33,7 +33,7 @@ const Productform = ({
        <div  className='productdatacontainer'> <div><label>Product Quantity :</label></div><input type='number' name='quantity'value={product?.quantity} placeholder=' Product quantity' onChange={(e)=>(handleinputs(e))}/></div>
        <div className='productdatacontainer'><div> <label>Product Model :</label></div><input type='text' name='model'value={product?.model} placeholder='Product model' onChange={(e)=>(handleinputs(e))}/></div>
        <div className='productdatacontainer'><div> <label>IN Number :</label></div><input type='text' name='INnumber'value={product?.INnumber} placeholder='IN Number' onChange={(e)=>(handleinputs(e))}/></div>
-       <div className='productdatacontainer'><div> <label>IC number :</label></div><input type='text' name='ICnumber'value={product?.ICnumber} placeholder='IC Number' onChange={(e)=>(handleinputs(e))}/></div>
+       <div className='productdatacontainer'><div> <label>IC Code :</label></div><input type='text' name='ICnumber'value={product?.ICnumber} placeholder='IC Code' onChange={(e)=>(handleinputs(e))}/></div>
       <div className='productdatacontainer'><div> <label>Order Number :</label></div><input type='text' name='ordernumber'value={product?.ordernumber} placeholder='Order Number' onChange={(e)=>(handleinputs(e))}/></div>
            
           <div className='productdatacontainer'><div> <label>Description :</label></div>

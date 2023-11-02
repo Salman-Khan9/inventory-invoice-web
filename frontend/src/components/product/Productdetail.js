@@ -45,7 +45,17 @@ const dispatch = useDispatch()
       <h3>Product Sku :</h3>
 
       <div className='viewproduct'>{Product?.sku}</div>
+      <h3>Product IN Number :</h3>
+
+<div className='viewproduct'>{Product?.INnumber}</div>
+ <h3>IC Code :</h3>
+
+<div className='viewproduct'>{Product?.ICnumber}</div> 
+<h3>Order Number :</h3>
+
+<div className='viewproduct'>{Product?.ordernumber}</div>
     </div>
+    
   )
 }
 

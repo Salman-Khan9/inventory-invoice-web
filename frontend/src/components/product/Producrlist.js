@@ -80,7 +80,7 @@ const Producrlist = ({products,loading}) => {
                     <th>Actions</th>
                     <th>Order Number</th>
                     <th>IN Number</th>
-                    <th>IC Number</th>
+                    <th>IC Code</th>
                 </tr>
             </thead>
             <tbody>
