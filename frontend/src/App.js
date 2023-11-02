@@ -18,7 +18,6 @@ import AddProduct from "./Pages/AddProduct";
 import Productdetail from "./components/product/Productdetail";
 import Editproduct from "./Pages/Editproduct";
 import Invoice from "./Pages/Invoice";
-import Invoicehistory from "./Pages/Invoicehistory/Invoicehistory";
   
   
 axios.defaults.withCredentials=true
@@ -78,13 +77,6 @@ function App() {
       <Sidebar>
         <Layout>
           <Invoice/>
-        </Layout>
-      </Sidebar>
-      
-     }/><Route path="/invoicehistory" element = {
-      <Sidebar>
-        <Layout>
-          <Invoicehistory/>
         </Layout>
       </Sidebar>
       

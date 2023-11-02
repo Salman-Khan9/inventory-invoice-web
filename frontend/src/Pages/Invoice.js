@@ -38,10 +38,11 @@ const Invoice = () => {
   };
   const [value, setvalue] = useState("");
   
-  const oninfochange = (e)=>{
-    const {name,value}=e.target
+  const oninfochange = (e,)=>{
+    const {name,value}= e.target
     setclintinfo({...clintinfo,[name]:value})
  }
+ const clientinfo = {clientname,contactnumber, email,invoicenumber,  address}
   const onchange = (e) => {
     
     setvalue(e.target.value);
@@ -66,9 +67,11 @@ const Invoice = () => {
 
         ...apiData,
         [e.target.name]: {
-      clintinfo:clintinfo,
+      
           
           ordernumber:product.ordernumber,
+          name:product.name,
+          model:product.model,
           INnumber:product.INnumber,
           ICnumber:product.ICnumber,
           
@@ -87,7 +90,7 @@ const Invoice = () => {
     }
   };
 
-  const onRefreshData = (e, quantity, sku, id,ordernumber,INnumber,ICnumber) => {
+  const onRefreshData = (e, quantity, sku, id,ordernumber,INnumber,ICnumber,name,model) => {
     if (e.target.value <= parseInt(quantity)) {
       if (apiData[e.target.name]) {
         setApiData({
@@ -96,9 +99,9 @@ const Invoice = () => {
           ...apiData,
           [e.target.name]: {
             
-            clintinfo:clintinfo,
+            
         
-          ordernumber,INnumber,ICnumber,
+          ordernumber,INnumber,ICnumber,name,model,
             quantity: parseInt( e.target.value),
             id,
             finalprice:parseInt(finalprice[e.target.name])
@@ -121,9 +124,9 @@ const Invoice = () => {
         ...apiData,
         [e.target.name]: {
           
-      clintinfo:clintinfo,
+      
           
-          ordernumber,INnumber,ICnumber,
+          ordernumber,INnumber,ICnumber,name,model,
           quantity: parseInt(quantity),
           id,
           finalprice:parseInt(finalprice[e.target.name])
@@ -140,9 +143,11 @@ const Invoice = () => {
         ...apiData,
         [e.target.name]: {
           
-      clintinfo:clintinfo,
+      
          
           ordernumber:product.ordernumber,
+          name:product.name,
+          model:product.model,
           INnumber:product.INnumber,
           ICnumber:product.ICnumber,
           id: product._id,
@@ -159,20 +164,22 @@ console.log("final price ==",finalprice)
 
   const save = async ()=>{
    
-   const res =  await axios.post(`${backend_url}/api/createinvoice`, apiData ,{responseType :"arraybuffer"})
+   const res =  await axios.post(`${backend_url}/api/createinvoice`, {apiData,clientinfo} ,{responseType :"arraybuffer"})
 
   console.log(res)
-  const blob = new Blob([res.data], { type: 'application/pdf' });
+  const blob = new Blob([res.data], { type: 'application/pdf', });
       const url = window.URL.createObjectURL(blob);
       window.open(url);
 
   }
 
   return (
+    
     <div className="Productlist">
+     
       <h2 className="dashboardheading">Client Information </h2>
       
-      <div> <span className="invoiceheading">Client Name :</span> <input  type="text"  className="invoiceinput"  name="clientname" value={clientname} onChange={oninfochange} />
+      <div>  <span className="invoiceheading">Client Name :</span> <input type="text"  className="invoiceinput"  name="clientname" value={clientname} onChange={oninfochange} />
       <span className="invoiceheading">Email :</span>  <input type="text"  className="invoiceinput"  name="email" value={email} onChange={oninfochange} />
      <span className="invoiceheading">Contact :</span>  <input type="text"  className="invoiceinput"  name="contactnumber" value={contactnumber} onChange={oninfochange} />
      <span className="invoiceheading">Invoice Number:</span> <input  type="text"  className="invoiceinput" name="invoicenumber" value={invoicenumber} onChange={oninfochange} />
@@ -202,8 +209,8 @@ console.log("final price ==",finalprice)
                 <th>name</th>
                 <th>model</th>
                 <th>Order Number</th>
-                <th>IC code</th>
                 <th>IN Number</th>
+                <th>IC Code</th>
                 <th>Total quantity</th>
                 <th>quantity</th>
               
@@ -242,7 +249,7 @@ console.log("final price ==",finalprice)
                         required
                         name={sku}
                         value={qty[sku]}
-                        onChange={(e) => onRefreshData(e, quantity, sku, _id,ordernumber,INnumber,ICnumber)}
+                        onChange={(e) => onRefreshData(e, quantity, sku, _id,ordernumber,INnumber,ICnumber,name,model)}
                       />
                     </td>
                     <td>{price}</td>

@@ -13,10 +13,7 @@ const invoiceSchema = new mongoose.Schema({
     type: JSON,
     require: true
   },
-  Clientinfo:{
-    type:JSON,
-    require:true
-  }
+  
   
 });
 
