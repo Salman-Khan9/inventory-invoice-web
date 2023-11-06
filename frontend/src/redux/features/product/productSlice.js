@@ -82,6 +82,7 @@ export const GetAllProductsThunk = createAsyncThunk(
   async ({id,formData},thunkAPI)=>{
    try {
      const response =  await productService.updateproduct(id,formData)
+     console.log("product",formData)
      return response.data
    } catch (error) {
      const message = (

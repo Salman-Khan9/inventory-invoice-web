@@ -37,15 +37,15 @@ trim:true,
   },
   ordernumber:{
     type : String,
-    required : [true,"please add a category"]
+    required : [true,"please add a ordernumber"]
   },
   INnumber:{
     type : String,
-    required : [true,"please add a category"]
+    required : [true,"please add a INnumber"]
   },
   ICnumber:{
     type : String,
-    required : [true,"please add a category"]
+    required : [true,"please add a ICnumber"]
   }
 
 })

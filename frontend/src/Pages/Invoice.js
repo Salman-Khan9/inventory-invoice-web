@@ -12,6 +12,7 @@ import {
 } from "../redux/features/product/searchslice";
 import Search from "../components/search/Search";
 import axios from "axios";
+import RedirectUserHook from "../HOOKS/RedirectUserHook";
 const backend_url = process.env.REACT_APP_BACKEND_URL
 
 const initialstate={
@@ -23,6 +24,8 @@ const initialstate={
   
 }
 const Invoice = () => {
+  RedirectUserHook("/Login")
+
   const [clintinfo, setclintinfo] = useState(initialstate)
   const {clientname,contactnumber, email,invoicenumber,  address}=clintinfo
   const [qty, setQuantity] = useState({qty:0});
@@ -137,7 +140,7 @@ const Invoice = () => {
     }
   };
   const onfinalpricechange = (e,sku,product)=>{
-   setApiData(
+  if(apiData[e.target.name]){ setApiData(
       {
         
         ...apiData,
@@ -156,7 +159,7 @@ const Invoice = () => {
         },
         
       },
-    )
+    )}
     setfinalprice({...finalprice, [sku]: parseInt(e.target.value)})   
 }
 console.log("final price ==",finalprice)
@@ -170,6 +173,7 @@ console.log("final price ==",finalprice)
   const blob = new Blob([res.data], { type: 'application/pdf', });
       const url = window.URL.createObjectURL(blob);
       window.open(url);
+      window.location.reload();
 
   }
 
@@ -205,19 +209,19 @@ console.log("final price ==",finalprice)
           <table>
             <thead>
               <tr>
-                <th>select</th>
-                <th>name</th>
-                <th>model</th>
+                <th>Select</th>
+                <th>Name</th>
+                <th>Model</th>
                 <th>Order Number</th>
                 <th>IN Number</th>
                 <th>IC Code</th>
                 <th>Total quantity</th>
-                <th>quantity</th>
+                <th>Quantity</th>
               
-                <th>price</th>
-                <th>final price</th>
+                <th>Price</th>
+                <th>Final price</th>
 
-                <th>value</th>
+                <th>Value</th>
 
               </tr>
             </thead>

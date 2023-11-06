@@ -15,7 +15,6 @@ const Editproduct = () => {
    
     
     const editproduct = useSelector(selectproduct)
-    console.log(editproduct)
     const dispatch = useDispatch()
     const [ProductImage, setProductImage] = useState("")
     const [ImagePreview, setImagePreview] = useState(null)
@@ -45,15 +44,20 @@ const Editproduct = () => {
   const saveProduct = async (e)=>{
     e.preventDefault()
     const formData = new FormData()
+
     formData.append("name", product.name)
     formData.append("description", product?.description)
     formData.append("price", product?.price)
     formData.append("quantity", product?.quantity)
-    formData.append("category", product?.category)
+    formData.append("model", product?.model)
+    formData.append("ordernumber", product?.ordernumber)
+    formData.append("INnumber", product?.INnumber)
+    formData.append("ICnumber", product?.ICnumber)
     if(ProductImage){
     formData.append("image", ProductImage)}
-    
     console.log(...formData)
+
+    
     
    await dispatch(updateProductThunk({id,formData}))
    await dispatch(GetAllProductsThunk())

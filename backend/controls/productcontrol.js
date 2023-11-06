@@ -79,7 +79,7 @@ if(req.file){
   }
   const update = async (req,res) =>{
    try {
-      const {name,description,quantity,category ,price}=req.body
+      const {name,description,quantity,model,ordernumber,INnumber,ICnumber ,price}=req.body
    const id = req.params.id
 
    const product = await Prodcut.findById(id)
@@ -106,7 +106,7 @@ if(req.file){
       }
    }
    const update = await Prodcut.findByIdAndUpdate({_id:id},{
-      name,description,price,quantity,category, image: Object.keys(filedata).length === 0?product?.image:filedata
+      name,description,price,quantity,model,ordernumber,INnumber,ICnumber, image: Object.keys(filedata).length === 0?product?.image:filedata
       
    },{
       new:true,
