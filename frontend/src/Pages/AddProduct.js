@@ -32,7 +32,7 @@ const AddProduct = () => {
   ICnumber} = product
 
   const handleinputs=(e)=>{
-    const {name,value}=e.target
+    const {name,value}= e.target
     setproduct({...product , [name]:value})
   }
 const handleImageinputs = (e)=>{
@@ -48,14 +48,14 @@ return sku
 const saveProduct = async (e)=>{
   e.preventDefault()
   const formData = new FormData()
-  formData.append("name", name)
-  formData.append("ordernumber", ordernumber)
-  formData.append("INnumber", INnumber)
-  formData.append("ICnumber", ICnumber)
-  formData.append("description", description)
-  formData.append("price", price)
-  formData.append("quantity", quantity)
-  formData.append("model", model)
+  formData.append("name", name.trim())
+  formData.append("ordernumber", ordernumber.trim())
+  formData.append("INnumber", INnumber.trim())
+  formData.append("ICnumber", ICnumber.trim())
+  formData.append("description", description.trim())
+  formData.append("price", price.trim())
+  formData.append("quantity", quantity.trim())
+  formData.append("model", model.trim())
   formData.append("image", ProductImage)
   formData.append("previewimage", ImagePreview)
   formData.append("sku", generateSKU(model))

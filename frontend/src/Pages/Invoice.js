@@ -45,7 +45,7 @@ const Invoice = () => {
     const {name,value}= e.target
     setclintinfo({...clintinfo,[name]:value})
  }
- const clientinfo = {clientname,contactnumber, email,invoicenumber,  address}
+ const clientinfo = {clientname ,contactnumber, email,invoicenumber,  address}
   const onchange = (e) => {
     
     setvalue(e.target.value);
@@ -176,6 +176,7 @@ console.log("final price ==",finalprice)
       window.location.reload();
 
   }
+  
 
   return (
     
@@ -183,14 +184,14 @@ console.log("final price ==",finalprice)
      
       <h2 className="dashboardheading">Client Information </h2>
       
-      <div>  <span className="invoiceheading">Client Name :</span> <input type="text"  className="invoiceinput"  name="clientname" value={clientname} onChange={oninfochange} />
-      <span className="invoiceheading">Email :</span>  <input type="text"  className="invoiceinput"  name="email" value={email} onChange={oninfochange} />
-     <span className="invoiceheading">Contact :</span>  <input type="text"  className="invoiceinput"  name="contactnumber" value={contactnumber} onChange={oninfochange} />
-     <span className="invoiceheading">Invoice Number:</span> <input  type="text"  className="invoiceinput" name="invoicenumber" value={invoicenumber} onChange={oninfochange} />
+      <div>  <span className="invoiceheading">Client Name :</span> <input type="text"  className="invoiceinput"  name="clientname" value={clientname.trim()} onChange={oninfochange} />
+      <span className="invoiceheading">Email :</span>  <input type="text"  className="invoiceinput"  name="email" value={email.trim()} onChange={oninfochange} />
+     <span className="invoiceheading">Contact :</span>  <input type="text"  className="invoiceinput"  name="contactnumber" value={contactnumber.trim()} onChange={oninfochange} />
+     <span className="invoiceheading">Invoice Number:</span> <input  type="text"  className="invoiceinput" name="invoicenumber" value={invoicenumber.trim()} onChange={oninfochange} />
       
       </div>
         <span className='addressheading'> <label>Address : </label></span>
-          <textarea className="address" placeholder='Address' rows="3" cols="30" name='address'value={address} onChange={oninfochange}   ></textarea>
+          <textarea className="address" placeholder='Address' rows="3" cols="30" name='address'value={address.trim()} onChange={oninfochange}   ></textarea>
       
       <hr></hr>
       <div className="head">
@@ -239,11 +240,11 @@ console.log("final price ==",finalprice)
                       />
                     </td>
                     <td>{shortlength(name)}</td>
-                    <td>{model}</td>
-                    <td>{ordernumber}</td>
-                    <td>{INnumber}</td>
-                    <td>{ICnumber}</td>
-                    <td>{quantity}</td>
+                    <td>{shortlength(model)}</td>
+                    <td>{shortlength(ordernumber)}</td>
+                    <td>{shortlength(INnumber)}</td>
+                    <td>{shortlength(ICnumber)}</td>
+                    <td>{shortlength(quantity)}</td>
 
 
 

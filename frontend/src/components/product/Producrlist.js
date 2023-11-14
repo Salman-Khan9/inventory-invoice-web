@@ -23,7 +23,7 @@ const Producrlist = ({products,loading}) => {
     }
     const shortlength = (data)=>{
         if(data.length>16){
-            return data.slice(0,16)+"..."
+            return data.slice(0,14)+"..."
         }else{
             return data
         }
@@ -36,7 +36,7 @@ const Producrlist = ({products,loading}) => {
       const  Confirmdelete = (id)=>{
         confirmAlert({
           title: 'Delete Product',
-          message: 'Are you sure to delete this product.',
+          message: 'Are you sure you want to delete this product.',
           buttons: [
             {
               label: 'Confirm',
@@ -92,18 +92,18 @@ const Producrlist = ({products,loading}) => {
                         <tr key={_id}>
                             <td >{index+1}</td>
                             <td>{shortlength(name)}</td>
-                            <td>{model}</td>
+                            <td>{shortlength(model)}</td>
                             
                             
-                            <td>{quantity}</td>
-                            <td>{price}</td>
-                            <td>{quantity*price}</td>
+                            <td>{shortlength(quantity)}</td>
+                            <td>{shortlength(price)}</td>
+                            <td>{shortlength(quantity*price)}</td>
                             <td><Link to={`/UpdateProduct/${_id}`}> <MdChangeCircle size={20}  color='Purple'/> </Link>
                             <Link to={`/Productdetail/${_id}`}><BsFillEyeFill size={20} color='green'/></Link>
                             <MdDelete cursor="pointer" size={20} color='red' onClick={()=>Confirmdelete(_id)}/></td>
-                            <td>{ordernumber}</td>
-                            <td>{INnumber}</td>
-                            <td>{ICnumber}</td>
+                            <td>{shortlength(ordernumber)}</td>
+                            <td>{shortlength(INnumber)}</td>
+                            <td>{shortlength(ICnumber)}</td>
                         </tr>
                         )
                     })
