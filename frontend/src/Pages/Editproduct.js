@@ -24,10 +24,20 @@ const Editproduct = () => {
       const {name,value}=e.target
       setproduct({...product , [name]:value})
     }
-  const handleImageinputs = (e)=>{
-    setProductImage(e.target.files[0])
-    setImagePreview(URL.createObjectURL(e.target.files[0]))
-  }
+    const handleImageinputs = (e) => {
+      if (e.target.files[0]) {
+        setProductImage(e.target.files[0]);
+  
+        setImagePreview(URL.createObjectURL(e.target.files[0]));
+      } else {
+        return setProductImage(null);
+      }
+    };
+    const handleremoveimage = (e) => {
+      setProductImage(null);
+  
+      setImagePreview(null);
+    };
   useEffect(() => {
     
     dispatch(singleProductThunk(id))
@@ -45,7 +55,7 @@ const Editproduct = () => {
     e.preventDefault()
     const formData = new FormData()
 
-    formData.append("name", product.name)
+    formData.append("name", product?.name)
     formData.append("description", product?.description)
     formData.append("price", product?.price)
     formData.append("quantity", product?.quantity)
@@ -54,7 +64,11 @@ const Editproduct = () => {
     formData.append("INnumber", product?.INnumber)
     formData.append("ICnumber", product?.ICnumber)
     if(ProductImage){
-    formData.append("image", ProductImage)}
+    formData.append("image", ProductImage)}else{
+      formData.append("image",null)
+    }
+    
+    console.log(ProductImage)
     console.log(...formData)
 
     
@@ -62,7 +76,6 @@ const Editproduct = () => {
    await dispatch(updateProductThunk({id,formData}))
    await dispatch(GetAllProductsThunk())
    navigate("/Dashboard")
-
   }
   
   
@@ -74,6 +87,8 @@ const Editproduct = () => {
    <div> { isloading && <Loader/>}
    <Productform
    product = {product}
+   handleremoveimage={handleremoveimage}
+
    ProductImage = {ProductImage}
    ImagePreview = {ImagePreview}
    handleinputs = {handleinputs}

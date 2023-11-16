@@ -29,7 +29,7 @@ const dispatch = useDispatch()
   return (
     <div className='viewproductcontainer'>
       <h3>Product Image :</h3>
-      <div className='viewproduct'>{Product?.image?(<img height="200px" src={Product.image.filepath }alt=''/>):(<p style={{color:"#b23b3b"}}>No image set for this product</p>)}</div>
+      <div className='viewproduct'>{Product?.image?(<img height="180px" src={Product.image.filepath }alt=''/>):(<p style={{color:"#b23b3b"}}>No image set for this product</p>)}</div>
       <h3>Product Name :</h3>
 
       <div className='viewproduct'>{Product?.name}</div>
