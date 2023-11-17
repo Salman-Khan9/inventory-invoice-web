@@ -7,6 +7,7 @@ import {
 } from "../redux/features/product/productSlice";
 import Loader from "../components/Loader";
 import RedirectUserHook from "../HOOKS/RedirectUserHook";
+import { toast } from "react-toastify";
 const initialstate = {
   name: "",
   model: "",
@@ -77,11 +78,22 @@ const AddProduct = () => {
     formData.append("previewimage", ImagePreview);
     formData.append("sku", generateSKU(model));
     console.log(...formData);
+    if( !name||
+      !model||
+      !quantity||
+      !price||
+      !description||
+      !INnumber||
+      !ordernumber||
+      !ICnumber){
+        return toast.error("Please fill all the fields")
+
+    }else{
 
     await dispatch(createproductThunk(formData));
 
      window.location.reload()
-  };
+  }};
 
   return (
     <div>

@@ -13,6 +13,8 @@ import {
 import Search from "../components/search/Search";
 import axios from "axios";
 import RedirectUserHook from "../HOOKS/RedirectUserHook";
+import { validate } from "../services/authService";
+import { toast } from "react-toastify";
 const backend_url = process.env.REACT_APP_BACKEND_URL
 
 const initialstate={
@@ -24,6 +26,7 @@ const initialstate={
   
 }
 const Invoice = () => {
+  
   RedirectUserHook("/Login")
 
   const [clintinfo, setclintinfo] = useState(initialstate)
@@ -32,6 +35,7 @@ const Invoice = () => {
   const [finalprice, setfinalprice] = useState({finalprice:0})
   const [apiData, setApiData] = useState({});
   const loading = useSelector(selectisloading);
+  console.log(qty)
   const shortlength = (data) => {
     if (data.length > 16) {
       return data.slice(0, 16) + "...";
@@ -79,7 +83,7 @@ const Invoice = () => {
           ICnumber:product.ICnumber,
           
           id: product._id,
-          quantity: qty[e.target.name],
+          quantity: parseInt( qty[e.target.name]),
           finalprice: parseInt(finalprice[e.target.name])
         },
         
@@ -121,6 +125,8 @@ const Invoice = () => {
     } else {
       
       setQuantity({ ...qty, [sku]: parseInt(quantity) });
+      
+      if(apiData[e.target.name]){
       setApiData({
         
 
@@ -136,7 +142,7 @@ const Invoice = () => {
         }, 
         
       },
-      );
+      )};
     }
   };
   const onfinalpricechange = (e,sku,product)=>{
@@ -164,11 +170,16 @@ const Invoice = () => {
 }
 console.log("final price ==",finalprice)
   console.log(apiData);
-
+  
+  
   const save = async ()=>{
+    if(email && !validate(email)){
+      return toast.error("Please Enter a Valid Email")
+  
+     }
    
    const res =  await axios.post(`${backend_url}/api/createinvoice`, {apiData,clientinfo} ,{responseType :"arraybuffer"})
-
+   
   console.log(res)
   const blob = new Blob([res.data], { type: 'application/pdf', });
       const url = window.URL.createObjectURL(blob);
@@ -251,7 +262,6 @@ console.log("final price ==",finalprice)
                     <td >
                       <input
                         type="number"
-                        required
                         name={sku}
                         value={qty[sku]}
                         onChange={(e) => onRefreshData(e, quantity, sku, _id,ordernumber,INnumber,ICnumber,name,model)}
