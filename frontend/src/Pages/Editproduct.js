@@ -55,14 +55,14 @@ const Editproduct = () => {
     e.preventDefault()
     const formData = new FormData()
 
-    formData.append("name", product?.name)
-    formData.append("description", product?.description)
-    formData.append("price", product?.price)
-    formData.append("quantity", product?.quantity)
-    formData.append("model", product?.model)
-    formData.append("ordernumber", product?.ordernumber)
-    formData.append("INnumber", product?.INnumber)
-    formData.append("ICnumber", product?.ICnumber)
+    formData.append("name", product?.name.trim())
+    formData.append("description", product?.description.trim())
+    formData.append("price", product?.price.trim())
+    formData.append("quantity", product?.quantity.trim())
+    formData.append("model", product?.model.trim())
+    formData.append("ordernumber", product?.ordernumber.trim())
+    formData.append("INnumber", product?.INnumber.trim())
+    formData.append("ICnumber", product?.ICnumber.trim())
     if(ProductImage){
     formData.append("image", ProductImage)}else{
       formData.append("image",null)

@@ -18,11 +18,11 @@ import { toast } from "react-toastify";
 const backend_url = process.env.REACT_APP_BACKEND_URL
 
 const initialstate={
-  clientname:"",
-  contactnumber:"",
-  invoicenumber:"",
-  email:"",
-  address:"",
+  clientname:"".trim(),
+  contactnumber:"".trim(),
+  invoicenumber:"".trim(),
+  email:"".trim(),
+  address:"".trim(),
   
 }
 const Invoice = () => {
@@ -195,14 +195,14 @@ console.log("final price ==",finalprice)
      
       <h2 className="dashboardheading">Client Information </h2>
       
-      <div>  <span className="invoiceheading">Client Name :</span> <input type="text"  className="invoiceinput"  name="clientname" value={clientname.trim()} onChange={oninfochange} />
-      <span className="invoiceheading">Email :</span>  <input type="text"  className="invoiceinput"  name="email" value={email.trim()} onChange={oninfochange} />
-     <span className="invoiceheading">Contact :</span>  <input type="text"  className="invoiceinput"  name="contactnumber" value={contactnumber.trim()} onChange={oninfochange} />
-     <span className="invoiceheading">Invoice Number:</span> <input  type="text"  className="invoiceinput" name="invoicenumber" value={invoicenumber.trim()} onChange={oninfochange} />
+      <div>  <span className="invoiceheading">Client Name :</span> <input maxLength={18} type="text"  className="invoiceinput"  name="clientname" value={clientname} onChange={oninfochange} />
+      <span className="invoiceheading">Email :</span>  <input type="text" maxLength={30}  className="invoiceinput"  name="email" value={email} onChange={oninfochange} />
+     <span className="invoiceheading">Contact :</span>  <input type="text"  maxLength={18} className="invoiceinput"  name="contactnumber" value={contactnumber} onChange={oninfochange} />
+     <span className="invoiceheading">Invoice Number:</span> <input  type="text" maxLength={10}  className="invoiceinput" name="invoicenumber" value={invoicenumber} onChange={oninfochange} />
       
       </div>
         <span className='addressheading'> <label>Address : </label></span>
-          <textarea className="address" placeholder='Address' rows="3" cols="30" name='address'value={address.trim()} onChange={oninfochange}   ></textarea>
+          <textarea className="address" placeholder='Address' rows="3" maxLength={40} cols="30" name='address'value={address} onChange={oninfochange}   ></textarea>
       
       <hr></hr>
       <div className="head">
@@ -261,6 +261,7 @@ console.log("final price ==",finalprice)
 
                     <td >
                       <input
+                      className="invinput"
                         type="number"
                         name={sku}
                         value={qty[sku]}
@@ -270,6 +271,8 @@ console.log("final price ==",finalprice)
                     <td>{price}</td>
 
                     <td><input 
+
+                    className="invinput"
                       type="number" name={sku} value={finalprice[sku]} onChange={(e)=>onfinalpricechange(e,sku,product)}/></td>
                     <td>{quantity * price}</td>
                  
